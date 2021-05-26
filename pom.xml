@@ -17,11 +17,11 @@
 
 	<developers>
 		<developer>
-			<id>Emc2</id>
-			<name>Erasmo Muñoz C</name>
-			<email>neramuca AT gmail DOT com</email>
+			<id></id>
+			<name>Svitlana Hromivchuk</name>
+			<email>gromivchuks@gmail.com</email>
 			<roles>
-				<role>profesor del curso</role>
+				<role>developer</role>
 			</roles>
 		</developer>
 	</developers>
