@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en-US" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="template :: header"></head>
+
+<body>
+	<nav th:replace="template :: Barra_Navegacion"></nav>
+	<div th:replace="template :: Cabecera"></div>
+	<div align="Center">
+		<h1>PAGINA DE MENSAJES</h1>
+		<div align="Center" style="color: blue; text-align: Center; size: 14" th:text="${Mensaje}">
+			<h2>Aquí saldrá el mensaje devuelto por el sistema</h2>
+		</div>
+	</div>
+<div th:replace="template :: footer"></div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en-US" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="template :: header"></head>
+
+<script type="text/javascript">
+
+    //Aquí empieza el jquery
+    $(document).ready(function () {
+     alert("Dentro del script");
+        $('#fecha').change( function () {
+        		alert("Se ha seleccionado la fecha");
+        })
+    }
+    </script>
+        	
+
+            
+
+
+<body>
+
+	<nav th:replace="template :: Barra_Navegacion"></nav>
+	<div th:replace="template :: Cabecera"></div>
+	<div align="Center">
+		<form action="CrearPrestamo.html" th:objects="${Prestamo}"
+			th:action="@{/GrabarPrestamo}" method="post">
+
+			<div>
+				<label for="Fecha">Fecha:</label>
+				
+				 <input type="text" id="Fecha" name="Fecha"  placeholder="dd/MM/yyyy" 
+				    data-th-field= "${Prestamo.Fecha}"
+				    data-th-value="${Prestamo.Fecha}" />
+				    
+			</div>
+
+			<div>
+				<label for="id_Lector">Lector:</label>
+				<!-- ComboBox de Lectores -->
+				<select th:field="*{Prestamo.id_Lector}">
+					<option data-th-each="Lector : ${LstLector}"
+						data-th-value="*{Lector.id}"
+						data-th-text="*{Lector.Nombre} + ' ' + *{Lector.Apellidos} ">Nombre del Lector</option>
+				</select>
+			</div>
+
+			<div>
+				<label for="id_Libro">Libro: </label>
+				<!-- ComboBox de Empleados -->
+				<select th:field="*{Prestamo.id_Libro}">
+					<option data-th-each="Libro : ${LstLibros}"
+						data-th-value="*{Libro.id}"
+						data-th-text="${Libro.Titulo} + ' - ' + ${Libro.Autor}">Título del Libro</option>
+				</select>
+			</div>
+
+			<input type="submit" Value="Crear Préstamo" />
+
+		</form>
+	</div>
+	<div th:replace="template :: footer"></div>
+</body>
+</html>

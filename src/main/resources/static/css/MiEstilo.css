@@ -1,0 +1,23 @@
+@charset "ISO-8859-1";
+
+body {
+    background-color: lightblue;
+   align-content: center;
+	}
+h1,h2{
+	color:red;
+	font-family:fantasy;
+	}
+
+input{
+	color:orange;
+	background-color:olive;
+	}
+table{
+	padding:20px;
+}
+img{
+	align-items: center;
+}
+
+

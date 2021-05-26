@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<!--  ************************************* -->
+
+<head th:fragment="header">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title th:text="#{Hotel.Nombre}">BIBLIOTECA ERNESTO CHE GUEVARA - MVC</title>
+	<link rel="stylesheet" type="text/css"	href="webjars/bootstrap/3.3.7/css/bootstrap.min.css" />
+	<link rel="stylesheet" th:href="@{/css/MiEstilo.css}"	href="../../css/MiEstilo.css" />
+</head>
+
+<!--  ************************************* -->
+
+<div th:fragment="Cabecera" align="Center">
+	<h2 th:text="#{Hotel.Nombre}">BIBLIOTECA ERNESTO CHE GUEVARA</h2>
+	<h3 th:text="#{Hotel.Direccion}">Calle Alcalá</h3>
+</div>
+
+<!--  ************************************* -->
+<nav th:fragment="Barra_Navegacion" class="navbar navbar-inverse">
+	<div class="container">
+		<div class="navbar-header">
+			<a class="navbar-brand"	href="https://martinezestevez.wordpress.com/2013/01/14/la-biblioteca-y-archivos-del-comandante-che-guevara/">Web Site</a>
+		</div>
+		<div id="navbar" class="collapse navbar-collapse">
+			<ul class="nav navbar-nav">
+				<li><a href="/Inicio" th:href="@{/}">Inicio</a></li>
+				<li><a href="/HomeLibro" th:href="@{/HomeLibro}">Libros</a></li>
+				<li><a href="/HomeLector" th:href="@{/HomeLector}">Lectores</a></li>
+				<li><a href="/HomePrestamo" th:href="@{/HomePrestamo}">Prestamos</a></li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+<!--  ************************************* -->
+
+<h2 th:fragment="footer" th:text="#{message.Piepagina}" 
+align="Center">Mensaje de pie de pagina</h2>
+
+</html>

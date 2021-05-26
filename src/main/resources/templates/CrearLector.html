@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en-US" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="template :: header"></head>
+<body>
+	<nav th:replace="template :: Barra_Navegacion"></nav>
+	<div th:replace="template :: Cabecera"></div>
+	<div align="Center">
+		<form action="CrearLector.html" th:objects="${Lector}"
+			th:action="@{/GrabarLector}" method="post">
+
+			<div>
+				<label for="Nombre">Nombre:</label> <input type="text"
+					th:field="*{Lector.nombre}" />
+			</div>
+			<div>
+				<label for="Apellidos">Apellidos </label> <input type="text"
+					th:field="*{Lector.apellidos}" />
+			</div>
+			<div>
+				<label for="Dni">DNI: </label> <input type="text"
+					th:field="*{Lector.dni}" />
+			</div>
+
+			<div>
+				<label for="Telefono">Teléfono: </label> <input type="text"
+					th:field="*{Lector.telefono}" />
+			</div>
+
+
+			<div>
+				<label for="Direccion">Dirección: </label> <input type="text"
+					th:field="*{Lector.direccion}" />
+			</div>
+
+			<input type="submit" value="Insertar Lector" />
+		</form>
+		<div th:replace="template :: footer"></div>
+	</div>
+</body>
+</html>

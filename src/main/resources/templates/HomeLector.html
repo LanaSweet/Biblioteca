@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="template :: header"></head>
+
+<body>
+	<nav th:replace="template :: Barra_Navegacion"></nav>
+	<div th:replace="template :: Cabecera"></div>
+
+	<!-- insertar imagenes  -->
+	<div align="Center">
+		<img src="../../img/Lector.jpg" th:src="@{/img/Lector.jpg}" />
+
+		<table>
+			<tr>
+				<td>
+					<form th:action="@{/GrabarLector}" method="get">
+						<input type="submit" th:value="#{Nuevo.Lector}" value="Crear Nuevo Lector" />
+					</form>
+				</td>
+				<td>
+					<form th:action="@{/ListarLectores}" method="get">
+						<input type="submit" th:value="#{Listar.Lectores}" value="Listar Lector" />
+					</form>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div th:replace="template :: footer"></div>
+</body>
+</html>

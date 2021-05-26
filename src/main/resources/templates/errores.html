@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en-US" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="template :: header"></head>
+
+<body>
+	<nav th:replace="template :: Barra_Navegacion"></nav>
+	<div th:replace="template :: Cabecera"></div>
+	<div align="Center">
+	<h1>PAGINA CONTROL DE ERORRES</h1>
+	<h1>HA SUCEDIDO UN ERROR - ESTAMOS TRABAJANDO EN ELLO</h1>
+
+	<div class="row">
+		<h1 class="indigo-text center" th:text="${error}">Página web no	hallada</h1>
+		<p th:text="${message}">Esta página no se encuentra</p>
+	</div>
+	</div>
+ <div th:replace="template :: footer"></div>
+</body>
+</html>

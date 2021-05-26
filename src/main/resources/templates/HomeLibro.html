@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="template :: header">
+</head>
+
+<body>
+
+	<nav th:replace="template :: Barra_Navegacion"></nav>
+	<div th:replace="template :: Cabecera"></div>
+
+	<!-- insertar imagenes  -->
+	<div align="Center">
+		<img src="../../img/Libro.jpg" th:src="@{/img/Libro.jpg}" />
+
+		<table>
+			<tr>
+				<td>
+					<form th:action="@{/GrabarLibro}" method="get">
+						<input type="submit" th:value="#{Nuevo.Libro}" value="Crear Nuevo Libro" />
+					</form>
+				</td>
+				<td>
+					<form th:action="@{/ListarLibros}" method="get">
+						<input type="submit" th:value="#{Listar.Libros}" value="Listar Libro" />
+					</form>
+				</td>
+				
+			</tr>
+		</table>
+	</div>
+	<div th:replace="template :: footer"></div>
+</body>
+</html>

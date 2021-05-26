@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en-US" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="template :: header">
+</head>
+
+<body>
+
+	<nav th:replace="template :: Barra_Navegacion"></nav>
+	<div th:replace="template :: Cabecera"></div>
+	<div align="Center">
+
+		<h2>Listado de Préstamos</h2>
+		<!--  Usando los estilos de tabla del Bootstrap -->
+		<table class="table table-striped table-bordered table-hover table-condensed">
+			<tr>
+				<th>id Prestamo</th>
+				<th>id Lector</th>
+				<th>Nombre Lector</th>
+				<th>id Libro</th>
+				<th>Titulo Libro</th>
+				<th>Fecha</th>
+			</tr>
+			<tr data-th-each="Prestamo : ${LstPrestamos}">
+				<td data-th-text="${Prestamo.id}">1</td>
+				<td data-th-text="${Prestamo.id_Lector}">200</td>
+            	<td	data-th-text="${Prestamo.Lector.Nombre} + ' ' + ${Prestamo.Lector.Apellidos} ">Nombre del Lector</td> 
+				<td data-th-text="${Prestamo.id_Libro}">1</td>
+				
+			<td	data-th-text="${Prestamo.Libro.Titulo} + ' '+ ${Prestamo.Libro.Autor}">Titulo del libro</td>  
+			
+		
+				  <td data-th-text="${Prestamo.Fecha}">01/01/1990</td> 
+				
+			</tr>
+		</table>
+	</div>
+
+	<div th:replace="template :: footer"></div>
+</body>
+</html>
